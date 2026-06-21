@@ -1,3 +1,5 @@
+@import "tailwindcss";
+
 * {
     margin: 0;
     padding: 0;
@@ -6,7 +8,7 @@
 
 body {
     font-family: 'Quicksand', sans-serif;
-    background-image: url('bg.jpg');
+    background-image: url('/bg.jpg');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -342,7 +344,6 @@ input[type="radio"] {
     color: #48bb78;
     font-weight: 600;
     text-align: center;
-    display: none;
 }
 
 .file-name-display:not(:empty) {
@@ -392,6 +393,13 @@ input[type="radio"] {
 
 .submit-btn:active {
     transform: translateY(1px);
+}
+
+.submit-btn:disabled {
+    background: #cbd5e0;
+    box-shadow: none;
+    cursor: not-allowed;
+    transform: none;
 }
 
 @media (max-width: 600px) {
