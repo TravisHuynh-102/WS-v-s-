@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đăng Ký Workshop Mùa Hè - Art House's</title>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="form-container">
+        <div class="glass-card">
+            <div class="header">
+                <img src="logo.png" alt="Art House's Logo" class="logo">
+                <h1>Đăng Ký Workshop Mùa Hè</h1>
+                <h2>🌊 Vỏ Sò Đã Quay Trở Lại 🌊</h2>
+                <p class="intro">Cảm ơn ba mẹ đã quan tâm và lựa chọn Art House's làm nơi trải nghiệm sáng tạo mùa hè cho bé. Ba mẹ vui lòng điền đầy đủ thông tin dưới đây để Art House's chuẩn bị vỏ sò và dụng cụ tươm tất nhất cho con nhé!</p>
+            </div>
+
+            <div class="event-info">
+                <h3>📌 Thông Tin Sự Kiện <span class="sub-title">(Để ba mẹ lưu ý)</span></h3>
+                <ul>
+                    <li><strong>⏰ Thời gian:</strong> 9h00 sáng, Chủ Nhật ngày 28/06/2026.</li>
+                    <li><strong>📍 Địa điểm:</strong> Art House's – 20 Nguyễn Khuyến, Phường 12, Quận Bình Thạnh, TP.HCM.</li>
+                    <li><strong>👶 Độ tuổi tham gia:</strong> 3 - 15 tuổi.</li>
+                    <li><strong>💰 Chi phí:</strong> 149.000 VNĐ/bé.<br><span class="highlight-text">(Đặc biệt: Art House’s dành tặng mức giá yêu thương chỉ <strong>99.000 VNĐ/bé</strong> cho 03 suất đăng ký sớm nhất!)</span></li>
+                </ul>
+            </div>
+
+            <form action="#" method="POST" id="registrationForm">
+                <div class="section">
+                    <h3>1️⃣ Thông Tin Ba/Mẹ <span class="sub-title">(Người liên hệ chính)</span></h3>
+                    <div class="form-group">
+                        <label for="parentName">Họ và tên Ba/Mẹ <span class="required">*</span></label>
+                        <input type="text" id="parentName" name="parentName" required placeholder="Nhập họ và tên...">
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Số điện thoại <span class="sub-title">(Có sử dụng Zalo)</span> <span class="required">*</span></label>
+                        <input type="tel" id="phone" name="phone" required placeholder="Nhập số điện thoại...">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email <span class="sub-title">(Để nhận xác nhận & hình ảnh của bé sau Workshop)</span> <span class="required">*</span></label>
+                        <input type="email" id="email" name="email" required placeholder="Nhập địa chỉ email...">
+                    </div>
+                </div>
+
+                <div class="section">
+                    <h3>2️⃣ Thông Tin Họa Sĩ Nhí</h3>
+                    <div class="form-group">
+                        <label for="childName">Họ và tên Bé <span class="required">*</span></label>
+                        <input type="text" id="childName" name="childName" required placeholder="Nhập họ và tên bé...">
+                    </div>
+                    <div class="form-group">
+                        <label for="childAge">Độ tuổi của Bé <span class="sub-title">(Từ 3 - 15 tuổi)</span> <span class="required">*</span></label>
+                        <input type="number" id="childAge" name="childAge" min="3" max="15" required placeholder="Nhập độ tuổi...">
+                    </div>
+                    <div class="form-group">
+                        <label>Bé có lưu ý đặc biệt nào về sức khỏe, tính cách hay dị ứng màu vẽ không?</label>
+                        <div class="radio-group">
+                            <label class="radio-label">
+                                <input type="radio" name="specialNeeds" value="no" checked onchange="toggleSpecialNeeds(false)"> Không có
+                            </label>
+                            <label class="radio-label">
+                                <input type="radio" name="specialNeeds" value="yes" onchange="toggleSpecialNeeds(true)"> Có
+                            </label>
+                        </div>
+                        <input type="text" id="specialNeedsDetail" name="specialNeedsDetail" class="hidden-input" placeholder="Vui lòng ghi rõ...">
+                    </div>
+                    <div class="form-group">
+                        <label for="otherChild">Đăng ký thêm bé khác <span class="sub-title">(Tên & Tuổi - Nếu có)</span></label>
+                        <input type="text" id="otherChild" name="otherChild" placeholder="Nhập tên & tuổi bé khác...">
+                    </div>
+                </div>
+
+                <div class="section">
+                    <h3>3️⃣ Xác Nhận Đăng Ký & Thanh Toán</h3>
+                    <div class="form-group">
+                        <label for="childCount">Số lượng bé tham gia <span class="required">*</span></label>
+                        <input type="number" id="childCount" name="childCount" min="1" value="1" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Thông tin thanh toán chuyển khoản <span class="required">*</span></label>
+                        <div class="qr-container" style="margin-left: 0;">
+                            <p class="qr-instruction">Vui lòng quét mã QR dưới đây để thanh toán chi phí tham gia:</p>
+                            <img src="qr-code.png" alt="Mã QR thanh toán VietinBank" class="qr-image">
+                            <div class="bank-info">
+                                <p>Ngân hàng: <strong>VietinBank</strong></p>
+                                <p>Chủ tài khoản: <strong>NGUYEN NGOC CAT TAM</strong></p>
+                                <p>Số tài khoản: <strong>103877284725</strong></p>
+                                <p>Chi nhánh: <strong>CN 4 - TP HCM - PGD PHAN VAN TRI</strong></p>
+                                <p class="transfer-note">Nội dung CK: Tên Ba Mẹ + SĐT</p>
+                            </div>
+                            
+                            <div class="upload-bill-container">
+                                <label for="billUpload" class="upload-label">
+                                    <div class="upload-icon">📸</div>
+                                    <span>Bấm vào đây để tải lên hình chụp màn hình bill chuyển khoản (Bắt buộc)</span>
+                                </label>
+                                <input type="file" id="billUpload" name="billUpload" accept="image/*" required class="file-input">
+                                <div id="file-name" class="file-name-display"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <h3>4️⃣ Lời Nhắn Gửi <span class="sub-title">(Tùy chọn)</span></h3>
+                    <div class="form-group">
+                        <label for="message">Ba mẹ có câu hỏi hay mong muốn gì thêm gửi đến Art House's không?</label>
+                        <textarea id="message" name="message" rows="3" placeholder="Viết lời nhắn của ba mẹ ở đây..."></textarea>
+                    </div>
+                </div>
+
+                <div class="footer-note">
+                    <p>💡 <strong>Lưu ý nhỏ:</strong> Vì khâu chuẩn bị vỏ sò khá kỳ công và Art House's muốn theo sát hỗ trợ từng bé thật kỹ, Workshop sẽ chốt danh sách ngay khi đủ số lượng. Art House's sẽ gọi điện/nhắn tin Zalo để xác nhận thành công ngay sau khi ba mẹ gửi form này!</p>
+                    <p class="hotline">Hotline hỗ trợ: <strong>0909699060</strong></p>
+                </div>
+
+                <button type="submit" class="submit-btn">Đăng Ký Ngay ✨</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('billUpload').addEventListener('change', function(e) {
+            const fileName = e.target.files[0] ? e.target.files[0].name : '';
+            document.getElementById('file-name').textContent = fileName ? '✅ Đã tải lên: ' + fileName : '';
+        });
+
+        function toggleSpecialNeeds(show) {
+            const input = document.getElementById('specialNeedsDetail');
+            if (show) {
+                input.style.display = 'block';
+                input.setAttribute('required', 'true');
+            } else {
+                input.style.display = 'none';
+                input.removeAttribute('required');
+                input.value = '';
+            }
+        }
+        
+        // Prevent form submission for demo purposes and show success alert
+        document.getElementById('registrationForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const btn = document.querySelector('.submit-btn');
+            const originalText = btn.innerHTML;
+            btn.innerHTML = 'Đang gửi... ⌛';
+            btn.style.opacity = '0.8';
+            btn.style.pointerEvents = 'none';
+            
+            setTimeout(() => {
+                alert('🎉 Cảm ơn ba mẹ đã đăng ký! Art House\\'s sẽ liên hệ sớm nhất để xác nhận.');
+                btn.innerHTML = originalText;
+                btn.style.opacity = '1';
+                btn.style.pointerEvents = 'auto';
+                this.reset();
+                toggleSpecialNeeds(false);
+            }, 1500);
+        });
+    </script>
+</body>
+</html>
